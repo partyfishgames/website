@@ -43,7 +43,7 @@ const ResponsiveAppBar = () => {
                     </LinkContainer>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <LinkContainer to={'/' + page.toLowerCase()}>
+                            <LinkContainer key={page} to={'/' + page.toLowerCase()}>
                                 <Button
                                     sx={{ my: 2, color: "white", textTransform: 'none', display: 'block' }}
                                 >
@@ -67,7 +67,7 @@ const ResponsiveAppBar = () => {
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                             >
-                                <i style={{color: "white"}} class="fab fa-github"></i>
+                                <i style={{color: "white"}} className="fab fa-github"></i>
                             </IconButton>
                         </Link>
                         <Link 
@@ -85,7 +85,7 @@ const ResponsiveAppBar = () => {
                                 aria-haspopup="true"
                                 color="inherit"
                             >
-                                <i style={{color: "white"}} class="fab fa-discord"></i>
+                                <i style={{color: "white"}} className="fab fa-discord"></i>
                             </IconButton>
                         </Link>
                     </Box>
@@ -120,8 +120,8 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <LinkContainer to={'/' + page.toLowerCase()}>
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                <LinkContainer key={page} to={'/' + page.toLowerCase()}>
+                                    <MenuItem onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">{page}</Typography>
                                     </MenuItem>
                                 </LinkContainer>
