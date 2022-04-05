@@ -2,3 +2,6 @@ a {
     color: inherit;
     text-decoration: none !important; /* no underline */
   }
+@media (min-width:768px) {
+  .container{max-width: 800px;}
+}
