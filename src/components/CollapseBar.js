@@ -33,15 +33,17 @@ const ResponsiveAppBar = () => {
         <AppBar style={{background: "#023E8A", color:"#222f3e"}} position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img src={FishIcon} alt="fishicon" style={{ width: "50px", height: "50px" }}></img>
-                    <LinkContainer to="/">
-                        <Button
-                            sx={{ my: 2, color: "white", textTransform: 'none', display: 'block', fontSize: 20 }}
-                        >
-                            PartyFish
-                        </Button>
-                    </LinkContainer>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <img src={FishIcon} alt="fishicon" style={{ width: "50px", height: "50px" }}></img>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex', lg: 'flex'} }}>
+                        <LinkContainer to="/">
+                                <Button
+                                    sx={{ my: 2, color: "white", textTransform: 'none', display: 'block', fontSize: 20 }}
+                                >
+                                    PartyFish
+                                </Button>
+                        </LinkContainer>
+                    </Box>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'}}}>
                         {pages.map((page) => (
                             <LinkContainer to={'/' + page.toLowerCase()}>
                                 <Button
@@ -52,7 +54,7 @@ const ResponsiveAppBar = () => {
                             </LinkContainer>
                         ))}
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'none', lg: 'flex'} }}>
                         <Link 
                             href="https://github.com/partyfishgames" 
                             underline="none"
@@ -89,7 +91,7 @@ const ResponsiveAppBar = () => {
                             </IconButton>
                         </Link>
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex', lg: 'none'} }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -116,7 +118,7 @@ const ResponsiveAppBar = () => {
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
                             sx={{
-                                display: { xs: 'block', md: 'none' },
+                                display: { xs: 'block', md: 'block' },
                             }}
                         >
                             {pages.map((page) => (
